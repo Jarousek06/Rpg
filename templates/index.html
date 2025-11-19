@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Start{% endblock %}
+{% block content %}
+  <h2>Vítejte u dungeonu</h2>
+  
+  <p>Odkazem vstoupíte do dungeonu.</p>
+  <a href="{{ url_for('dungeon', room_id=1) }}">Vstoupit</a>
+{% endblock %}

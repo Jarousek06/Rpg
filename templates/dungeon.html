@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ room.title }}{% endblock %}
+{% block content %}
+  <h2>{{ room.title }}</h2>
+  <img src="{{ url_for('static', filename=room.image) }}" alt="{{ room.title }}" style="max-width:100%;height:auto;display:block;margin:8px 0;">
+  <p>{{ room.text }}</p>
+  <nav>
+    {% for label, target in room.options %}
+      <a href="{{ url_for('dungeon', room_id=target) }}">{{ label }}</a><br>
+    {% endfor %}
+  </nav>
+  <p><a href="{{ url_for('index') }}">Na začátek</a> · <a href="javascript:history.back()">Go Back</a></p>
+{% endblock %}
